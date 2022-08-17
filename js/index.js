@@ -17,6 +17,7 @@ function App() {
     const [quotes, setQuotes] = React.useState([]);
     const [randomQuote, setRandomQuote] = React.useState([]);
     const [color, setColor] = React.useState('#000');
+    const [opacity, setOpacity] = React.useState('0');
 
     React.useEffect(() => {
         async function fetchData() {
@@ -28,6 +29,7 @@ function App() {
             let randomColorIndex = Math.floor(Math.random() * colors.length);
             setRandomQuote(data[randomIndex]);
             setColor(colors[randomColorIndex]);
+            setOpacity('1');
         }
         fetchData();        
     }, []);
@@ -43,11 +45,11 @@ function App() {
     return (
         <div id="wrapper" style={{backgroundColor: color, transition: "background-color 1.5s ease-in-out"}}>
             <div id="quote-box">
-                <div className="quote-text" style={{color: color, transition: "color 1.5s ease-in-out", opacity: "1"}}>
+                <div className="quote-text" style={{color: color, opacity: opacity, transition: "all 1.5s ease-in-out"}}>
                     <i className="fa fa-quote-left"></i>
                     <span id="text">{randomQuote.text}</span>
                 </div>
-                <div className="quote-author" style={{color: color, transition: "color 1.5s ease-in-out", opacity: "1"}}>
+                <div className="quote-author" style={{color: color, opacity: opacity, transition: "all 1.5s ease-in-out"}}>
                     —{' '}
                     <span id="author">{randomQuote.author || "Undefined author"}</span>
                 </div>

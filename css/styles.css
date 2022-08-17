@@ -30,6 +30,7 @@ div {
   height: auto;
   font-weight: 800;
   font-size: 1.75em;
+  opacity: 0;
 }
 #quote-box .quote-text i {
   font-size: 1em;
@@ -39,6 +40,7 @@ div {
   text-align: right;
   padding-top: 20px;
   font-size: 1em;
+  opacity: 0;
 }
 #quote-box .buttons .button {
   height: 38px;

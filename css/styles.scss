@@ -23,12 +23,14 @@ div {
   padding: 40px 50px;
   display: table;
   border-radius: 3px;
+
   .quote-text {
     text-align: center;
     width: 450px;
     height: auto;
     font-weight: 800;
     font-size: 1.75em;
+    opacity : 0;
     
     i {
       font-size: 1em;
@@ -40,6 +42,7 @@ div {
     text-align: right;
     padding-top: 20px;
     font-size: 1em;
+    opacity : 0;
   }
   
   .buttons {
