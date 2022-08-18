@@ -15,14 +15,20 @@ const colors = [
 
 function App() {
     const [quotes, setQuotes] = React.useState([]);
-    const [randomQuote, setRandomQuote] = React.useState([]);
+    const [randomQuote, setRandomQuote] = React.useState({});
     const [color, setColor] = React.useState('#000');
     const [opacity, setOpacity] = React.useState('0');
 
     React.useEffect(() => {
         async function fetchData() {
-            const response = await fetch("https://type.fit/api/quotes");
-            const data = await response.json();
+            let response, data;
+            try {
+                response = await fetch("https://type.fit/api/quotes");
+                data = await response.json();
+            } catch(error) {
+                setRandomQuote({ text: "There is somethin wrong with the API... Try updating the page.", author: ""})
+                setOpacity('1');
+            }
 
             setQuotes(data);
             let randomIndex = Math.floor(Math.random() * data.length);
