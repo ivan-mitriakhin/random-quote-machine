@@ -1,7 +1,8 @@
 # SPA Generating Random Quotes
 
-A freeCodeCamp project - "Build a Random Quote Machine". 
-This is a simple random quote machine built from scratch using React, SASS, and a bit of Bootstrap.
+### A freeCodeCamp project - "Build a Random Quote Machine". 
+
+This is a simple random quote machine built from scratch using React, SCSS, and a bit of Bootstrap.
 
 # Preview
 
